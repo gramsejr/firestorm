@@ -1,0 +1,20 @@
+{% extends "user/user_base.html" %}
+{% load sekizai_tags %}
+
+{% block page_title %}Edit Profile | {{ block.super }}{% endblock %}
+
+{% block left %}
+{% addtoblock "js" %}<script type="text/javascript" src="{{ STATIC_URL }}js/user_index.js"></script>{% endaddtoblock %}
+{% endblock %}
+
+{% block center %}
+  <p>Update your profile.</p>
+  <form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Update" />
+  </form>
+{% endblock %}
+
+{% block right %}
+  <p>{% lorem 3 p %}</p>
+{% endblock %}

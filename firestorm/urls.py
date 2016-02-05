@@ -5,6 +5,7 @@ from django.conf.urls import url
 
 from .views_user import home, TopicCreate
 from .views_kiosk import kiosk
+from .views_user_profile import UserUpdate
 
 
 urlpatterns = [
@@ -15,4 +16,6 @@ urlpatterns = [
         name='kiosk'),
     url(r'^topic/create/$', TopicCreate.as_view(),
         name='topic_create'),
+    url(r'^profile/edit/$', UserUpdate.as_view(),
+        name='edit_profile', context={'subject_create_form':})
 ]
